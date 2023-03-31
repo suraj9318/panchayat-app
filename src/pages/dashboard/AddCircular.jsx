@@ -93,9 +93,9 @@ const AddCircular = () => {
                                         className='form-select'
                                     >
                                         <option value="">Select</option>
-                                        <option value="1">General Purpose</option>
-                                        <option value="2">Official Purpose</option>
-                                        <option value="3">Transfer Purpose</option>
+                                        <option value="General Purpose">General Purpose</option>
+                                        <option value="Official Purpose">Official Purpose</option>
+                                        <option value="Transfer Purpose">Transfer Purpose</option>
                                     </select>
                                 </div>
                                 {formik.errors.category && formik.touched.category && (
@@ -112,8 +112,8 @@ const AddCircular = () => {
                                     name='language'
                                     className='form-select'>
                                         <option value="">Select</option>
-                                        <option value="1">Hindi</option>
-                                        <option value="2">English</option>
+                                        <option value="Hindi">Hindi</option>
+                                        <option value="English">English</option>
                                     </select>
                                 </div>
                                 {formik.errors.language && formik.touched.language && (

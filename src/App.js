@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import './App.css';
+import NotFound from './components/NotFound';
 
 import AddCircular from './pages/dashboard/AddCircular';
 import Home from './pages/dashboard/Home';
@@ -23,6 +23,8 @@ function App() {
         <Route path='/official-login' element={<OfficialLogin/>}/>
         <Route path='/public-registration' element={<PublicRegistration />} />
         <Route path='/public-login' element={<PublicLogin />} />
+
+        <Route path='*' element={<NotFound />} />
 
       </Routes>
     </BrowserRouter>
