@@ -1,24 +1,40 @@
-import logo from './logo.svg';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+
+import AddCircular from './pages/dashboard/AddCircular';
+import Home from './pages/dashboard/Home';
+import ViewCirculars from './pages/dashboard/ViewCirculars';
+
+import Landing from './pages/Landing';
+import OfficialLogin from './pages/OfficialLogin';
+import PublicLogin from './pages/PublicLogin';
+import PublicRegistration from './pages/PublicRegistration';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/home' element={<Home />} />
+        <Route path='/add-circular' element={<AddCircular />} />
+        <Route path='/view-circulars' element={<ViewCirculars />} />
+      
+
+        <Route path='/' element={<Landing />} />
+        <Route path='/official-login' element={<OfficialLogin/>}/>
+        <Route path='/public-registration' element={<PublicRegistration />} />
+        <Route path='/public-login' element={<PublicLogin />} />
+
+      </Routes>
+    </BrowserRouter>
+
+
+    // <Landing/>
+    // <PublicRegistration/>
+    // <OfficialLogin/>
+    // <PublicLogin/>
+
+    // <Home/>
+    // <AddCircular/>
   );
 }
 
