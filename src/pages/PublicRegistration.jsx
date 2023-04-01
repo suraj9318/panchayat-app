@@ -9,10 +9,12 @@ import { BiPhotoAlbum } from "react-icons/bi";
 import { IoIosPeople } from "react-icons/io";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-
+import { toast } from 'react-toastify';
+import { useNavigate } from "react-router-dom";
 
 
 const PublicRegistration = () => {
+    const navigate = useNavigate();
 const formik = useFormik({
     initialValues:{
         photo : null,
@@ -24,6 +26,7 @@ const formik = useFormik({
     },
     validationSchema: Yup.object({
         user: Yup.string().required("Please select user type"),
+        photo: Yup.string().required("Please select your photo"),
       mobile: Yup.string()
       .required("Please enter your mobile")
       .matches(
@@ -52,8 +55,25 @@ const formik = useFormik({
       ),
 
     }),
-    onSubmit: values => {
-        console.log(values)
+    onSubmit: (values,{ resetForm }) => {
+       let formdata = new FormData()
+       formdata.append('photo',values.photo)
+       formdata.append('userType',values.user)
+       formdata.append('mobile',values.mobile)
+       formdata.append('name',values.name)
+       formdata.append('email',values.email)
+       formdata.append('password',values.password)
+
+       const requestOptions = {
+        method: 'POST',
+        body: formdata
+    };
+
+       fetch('http://localhost:5000/api/v1/userRegistration', requestOptions)
+       .then(response =>console.log(response.status))
+       toast.success("Registerd Successfully")
+       resetForm();
+       navigate("/public-login");
     }
   });
 
@@ -74,11 +94,15 @@ const formik = useFormik({
                             <input
                                 type="file" name='photo' id='photo'
                                 className='form-input'
-                                value={formik.values.photo}
-                                onChange={formik.handleChange}                               
+                                // value={formik.values.photo}
+                                onChange={(event) => {
+                                    formik.setFieldValue("photo", event.currentTarget.files[0]);
+                                }}                              
                             /> 
                             </div>
-
+                            {formik.errors.photo && formik.touched.photo && (
+                                 <p className='error'>{formik.errors.photo}</p>
+                            )}
 
 
 

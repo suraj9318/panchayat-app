@@ -88,6 +88,15 @@ form{
     background: #03C988;
     
 }
+@media only screen and (max-width: 480px)
+.Toastify__toast-container {
+    width: 71vw;
+    padding: 0;
+    left: 0;
+    margin: 0;
+    align-items: center;
+    margin-left: 4rem;
+}
 }
   
 `

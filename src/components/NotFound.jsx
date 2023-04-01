@@ -11,7 +11,6 @@ const NotFound = () => {
         <h3>Oops, nothing here...</h3>
              <Link to='/'>
                <Button text="Back Home"/>
-                
                 </Link>
              </div> 
              </div> 
