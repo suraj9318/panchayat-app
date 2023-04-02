@@ -5,19 +5,16 @@ import Wrapper from '../../assets/wrappers/Home'
 import SmallSidebar from '../../components/SmallSidebar'
 import { toast } from 'react-toastify'
 const ViewCirculars = () => {
-  const [checkData,setCheckData] = useState(true)
   const [formData,setFormData] = useState([])
 
   const fetchData = async ()=>{
     const response = await fetch("http://localhost:5000/api/v1/getCircular");
     const data = await response.json();
     if(data.message === "No data found"){
-      setCheckData(false)
       setFormData([])
     }
     else{
       setFormData(data?.data)
-      setCheckData(true)
     }
   }
   useEffect(()=>{

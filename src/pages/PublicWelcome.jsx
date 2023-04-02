@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import logo from '../assets/images/logo.png'
 import Wrapper from '../assets/wrappers/PublicRegistration'
-import { FaMobile } from "react-icons/fa";
-import { RiLockPasswordFill } from "react-icons/ri";
-import { useFormik } from "formik";
-import * as Yup from "yup";
-import { json } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 import { useParams  } from "react-router-dom";
 
 const PublicWelcome = () => {
@@ -42,7 +37,15 @@ const PublicWelcome = () => {
                 </div>
                 <div className="card">
                     <h3>Welcome Citizen</h3>
+                    <div style={{textAlign : 'center', }}>
+                    <Link to='/' style={{color :"white"}}>
+                        <button type='button' className='btn'>
+                        Back Home
+                        </button>
+                        </Link>
+                     </div>
                 </div>
+                
             </div>
         </Wrapper>
     )

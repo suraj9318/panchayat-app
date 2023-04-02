@@ -1,9 +1,9 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { getPostFromLocalStorage } from '../../utils/localstorage';
+import { getUserFromLocalStorage, removeUserFromLocalStorage } from '../../utils/localstorage';
 const initialState = {
     isLoading: false,
     isSidebarOpen: false,
-    OfficailUserData : getPostFromLocalStorage() || {}
+    OfficailUserData : getUserFromLocalStorage() || {}
   };
 
   const userSlice = createSlice({
@@ -17,9 +17,16 @@ const initialState = {
         state.OfficailUserData = payload;
       },
 
+      logoutUser: (state,) => {
+        removeUserFromLocalStorage();
+        state.OfficailUserData = {};
+
+      },
+
+
 
     }})
 
 
-export const { toggleSidebar,storeOfficialUser} = userSlice.actions;
+export const { toggleSidebar,storeOfficialUser,logoutUser} = userSlice.actions;
 export default userSlice.reducer;
