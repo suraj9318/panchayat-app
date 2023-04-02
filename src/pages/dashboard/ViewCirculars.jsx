@@ -6,15 +6,19 @@ import SmallSidebar from '../../components/SmallSidebar'
 import { toast } from 'react-toastify'
 const ViewCirculars = () => {
   const [formData,setFormData] = useState([])
+  const [loading,setLoading] = useState(true)
 
   const fetchData = async ()=>{
+    setLoading(true)
     const response = await fetch("http://localhost:5000/api/v1/getCircular");
     const data = await response.json();
     if(data.message === "No data found"){
       setFormData([])
+      setLoading(false)
     }
     else{
       setFormData(data?.data)
+      setLoading(false)
     }
   }
   useEffect(()=>{
@@ -51,7 +55,8 @@ const handleDelete =(_id) =>{
         <div className='dashboard-page'>
           <h4>Welcome to View Circular</h4>
           <div className="card">
-            <table>
+            {loading ? <h2 style={{textAlign:"center"}}>Loading ....</h2>
+             : <table>
               <thead>
                 <tr>
                 <th>S.N</th>
@@ -84,6 +89,8 @@ const handleDelete =(_id) =>{
                 
               </tbody>
             </table>
+      }
+
           </div>
         </div>
       </div>

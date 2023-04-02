@@ -197,6 +197,7 @@ const AddCircular = () => {
                                     >Attach File</label>
                                     <input type="file" className='form-input'
                                         name='file' id='file'
+                                        accept=".pdf"
                                         onChange={(event) => {
                                             formik.setFieldValue("file", event.currentTarget.files[0]);
                                         }}

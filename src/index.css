@@ -243,6 +243,8 @@ ul {
   border-radius: var(--borderRadius);
   background: var(--backgroundColor);
   border: 1px solid var(--grey-200);
+  font-size: 1rem;
+  font-family: var(--bodyFont);
 }
 .form-input,
 .form-select,
