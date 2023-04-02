@@ -69,11 +69,25 @@ const formik = useFormik({
         body: formdata
     };
 
-       fetch('http://localhost:5000/api/v1/userRegistration', requestOptions)
-       .then(response =>console.log(response.status))
-       toast.success("Registerd Successfully")
-       resetForm();
-       navigate("/public-login");
+      try {
+        fetch('http://localhost:5000/api/v1/userRegistration', requestOptions)
+        .then(response =>{
+            if(response.status === 200){
+                toast.success("Registerd Successfully")
+                resetForm();
+                navigate("/public-login");
+            }
+            else{
+                toast.error("Something Went wrong !!")
+            }
+        }).catch((error) => {
+            toast.error("Something Went wrong !!")
+        });
+        
+        
+      } catch (error) {
+        toast.error("Something Went wrong !!")
+      }
     }
   });
 
