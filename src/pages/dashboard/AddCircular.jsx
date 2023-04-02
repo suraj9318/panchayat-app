@@ -24,8 +24,8 @@ const AddCircular = () => {
             circularNumber: Yup.string()
                 .required("Please enter circular number")
                 .matches(
-                    /^.*(?=.{3,}).*$/,
-                    "Please enter at least 3 digit"
+                    /^.*(?=.{5,}).*$/,
+                    "Please enter at least 5 digit"
                 ),
             subject: Yup.string()
                 .required("Please enter the subject title"),
