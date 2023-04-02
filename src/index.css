@@ -26,6 +26,7 @@ input[type=number] {
 
 :root {
   /* colors */
+  --primary-400: #957fc7;
   --primary-500: #7149C6;
   --primary-600: #602fc9;
   --primary-700: #6130cc;
@@ -373,4 +374,34 @@ ul {
     /* position: absolute;
     left: 15%; */
 
+}
+/* Table Style */
+table{
+  border: 1px solid var(--green-dark);
+  width: 100%;
+  text-align: center;
+  border-radius: 6px;
+  box-shadow: var(--shadow-1);
+  overflow-x: auto;
+  white-space: nowrap;
+  border-collapse: collapse;
+}
+table thead{
+    background: var(--primary-400);
+    color: var(--grey-900);
+}
+table tr{
+  border: 1px solid var(--grey-900);
+ 
+}
+
+table th,td{
+  padding: 8px;
+  border: 1px solid var(--grey-900);
+}
+.fileLink{
+  color: var(--primary-600);
+}
+.fileLink:hover{
+  color: blue;
 }

@@ -10,6 +10,9 @@ const Wrapper = styled.section`
     border-radius: var(--borderRadius);
     box-shadow: var(--shadow-1);
     margin-block: 1rem;
+    display: block;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
   .dashboard-page {
@@ -94,6 +97,14 @@ const Wrapper = styled.section`
     }
     .btn-container {
       margin-top: 0;
+    }
+    .btn-danger{
+      background: #E64848;
+      color:white;
+      transition: 0.2s ease-out;
+    }
+    .btn-danger:hover{
+      background: red;
     }
     @media (max-width: 720px) {
       p{
