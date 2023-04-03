@@ -3,7 +3,7 @@ import Navbar from '../../components/Navbar'
 import Sidebar from '../../components/Sidebar'
 import Wrapper from '../../assets/wrappers/Home'
 import SmallSidebar from '../../components/SmallSidebar'
-
+import { disableDate } from '../../utils/dateValidation'
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { toast } from 'react-toastify'
@@ -164,7 +164,7 @@ const AddCircular = () => {
 
                                 <div className='form-center'>
                                     <label htmlFor="" className='form-label' >Issued On</label>
-                                    <input type="date" className='form-input'
+                                    <input type="date" className='form-input' max={disableDate()}
                                         value={formik.values.issuedOn}
                                         onChange={formik.handleChange}
                                         id='issuedOn'

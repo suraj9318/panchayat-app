@@ -30,7 +30,6 @@ const PublicLogin = () => {
        fetch('http://localhost:5000/api/v1/userLogin', requestOptions)
        .then(response => response.json())
         .then(data => {
-            console.log(data)
             if(data.result === "failed"){
                 toast.error(data.message)
             }

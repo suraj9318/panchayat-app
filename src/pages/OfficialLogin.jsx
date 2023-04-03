@@ -34,7 +34,6 @@ const OfficialLogin = () => {
                fetch('http://localhost:5000/api/v1/officialLogin', requestOptions)
                .then(response => response.json())
                 .then(data => {
-                    console.log(data)
                     if(data.result === "failed"){
                         toast.error(data.message)
                     }
