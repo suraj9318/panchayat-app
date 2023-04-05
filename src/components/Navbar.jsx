@@ -14,7 +14,7 @@ const Navbar = () => {
 
   const logout = () => {
    dispatch(logoutUser())
-   toast.error("signing off")
+   toast.success("Signing off 👋")
    navigate("/");
   };
 

@@ -13,6 +13,7 @@ const Wrapper = styled.section`
     display: block;
   overflow-x: auto;
   white-space: nowrap;
+  box-shadow: -12px 10px 5px -4px rgba(173,173,173,1);
 }
 
   .dashboard-page {

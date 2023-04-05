@@ -79,7 +79,7 @@ const handleDelete =(_id) =>{
                         <td>{item.description}</td>
                         <td>{item.issuedOn}</td>
                         <td>{item.issuedBy}</td>
-                        <td><a classname="fileLink" target='_blank' href={`http://localhost:5000/uploads/circulars/${item.file}`}>view file link</a></td>
+                        <td><a className="fileLink" target='_blank' href={`http://localhost:5000/uploads/circulars/${item.file}`}>view file link</a></td>
                         <td style={{color : "red"}}><button type='button' onClick={()=> handleDelete(item._id)} className='btn btn-danger'>Delete</button></td>  
                     </tr>
                     )

@@ -24,6 +24,7 @@ h3{
     box-shadow: var(--shadow-1);
     margin-block: 1rem;
     border-top: 5px solid rgb(20, 216, 157);
+    box-shadow: 14px 10px 5px 0px rgba(173,173,173,1);
 }
 form{
     text-align: center;

@@ -347,6 +347,7 @@ ul {
   border-radius: var(--borderRadius);
   border-bottom: 5px solid rgb(20, 216, 157);
   margin-block: 2rem;
+  box-shadow: 14px 10px 5px 0px rgba(173,173,173,1);
 }
 .card-landing h3{
   text-align: center;
